@@ -221,12 +221,12 @@ export default function WarrantyPage() {
           </div>
           <div className="space-y-4">
             <h4 className="font-bold">Länkar</h4>
-            <ul className="text-slate-500 space-y-2 text-sm">
-              <li><Link href="/" className="hover:text-[#256DB5]">Hem</Link></li>
-              <li>Produkter</li>
-              <li>Analys</li>
-              <li>Garanti</li>
-            </ul>
+                <ul className="text-slate-500 space-y-3 text-sm">
+                  <li><Link href="/" className="hover:text-[#256DB5] transition-colors">Vattenfilter</Link></li>
+                  <li><Link href="#" className="hover:text-[#256DB5] transition-colors">Vattenanalys</Link></li>
+                  <li><Link href="/garanti/warranty" className="hover:text-[#256DB5] transition-colors font-medium text-[#256DB5]">Garantivillkor</Link></li>
+                  <li><Link href="#" className="hover:text-[#256DB5] transition-colors">Support</Link></li>
+                </ul>
           </div>
           <div className="space-y-4">
             <h4 className="font-bold">Kontakt</h4>
@@ -241,4 +241,5 @@ export default function WarrantyPage() {
     </div>
   )
 }
+
 

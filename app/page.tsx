@@ -351,7 +351,7 @@ export default function Home() {
               <h4 className="font-bold text-lg mb-8">Support</h4>
               <ul className="space-y-4 text-[#000000]/60">
                 <li><Link href="#" className="hover:text-[#256DB5] underline-offset-4 hover:underline transition-all">Hitta manualer</Link></li>
-                <li><Link href="#" className="hover:text-[#256DB5] underline-offset-4 hover:underline transition-all">Garanti</Link></li>
+                <li><Link href="/garanti/warranty" className="hover:text-[#256DB5] underline-offset-4 hover:underline transition-all">Garanti & Villkor</Link></li>
                 <li><Link href="#" className="hover:text-[#256DB5] underline-offset-4 hover:underline transition-all">Vanliga frågor</Link></li>
                 <li><Link href="#" className="hover:text-[#256DB5] underline-offset-4 hover:underline transition-all">Logga in</Link></li>
               </ul>
@@ -378,5 +378,6 @@ export default function Home() {
     </div>
   )
 }
+
 
 
