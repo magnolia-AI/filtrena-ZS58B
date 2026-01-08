@@ -34,60 +34,74 @@ export default function Home() {
       {/* Navigation */}
       <header 
         className={cn(
-          "fixed top-0 w-full z-50 transition-all duration-300",
+          "fixed top-0 w-full z-50 transition-all duration-500",
           isScrolled 
-            ? "bg-background/95 backdrop-blur-md border-b py-3 shadow-sm" 
-            : "bg-transparent py-5"
+            ? "bg-white/80 backdrop-blur-xl border-b border-black/5 py-4 shadow-[0_2px_20px_-10px_rgba(0,0,0,0.1)]" 
+            : "bg-transparent py-7"
         )}
       >
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
+        <div className="container mx-auto px-6 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className={cn(
+              "w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:rotate-6",
+              isScrolled ? "bg-[#256DB5]" : "bg-white/20 backdrop-blur-md"
+            )}>
+              <Droplets className={cn(
+                "h-6 w-6 transition-colors duration-500",
+                isScrolled ? "text-white" : "text-white"
+              )} />
+            </div>
             <span className={cn(
-              "text-2xl font-bold tracking-tighter transition-colors",
-              isScrolled ? "text-primary" : "text-white"
+              "text-xl font-black tracking-[0.2em] transition-all duration-500",
+              isScrolled ? "text-black" : "text-white"
             )}>
               FILTRENA
             </span>
           </Link>
           
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-10">
             {['Vattenfilter', 'Vattenanalys', 'Support', 'Om oss'].map((item) => (
               <Link 
                 key={item}
                 href="#" 
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-[#256DB5]",
-                  isScrolled ? "text-foreground" : "text-white/90"
+                  "text-[13px] uppercase tracking-widest font-bold transition-all duration-300 hover:text-[#256DB5] relative group",
+                  isScrolled ? "text-black/70" : "text-white/90"
                 )}
               >
                 {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#256DB5] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
-            <button className={cn(
-              "p-2 transition-colors",
-              isScrolled ? "text-foreground hover:text-[#256DB5]" : "text-white hover:text-white/70"
-            )}>
-              <Search size={20} />
-            </button>
-            <button className={cn(
-              "p-2 transition-colors relative",
-              isScrolled ? "text-foreground hover:text-[#256DB5]" : "text-white hover:text-white/70"
-            )}>
-              <ShoppingCart size={20} />
-              <span className="absolute top-0 right-0 h-4 w-4 bg-[#256DB5] text-white text-[10px] flex items-center justify-center rounded-full">0</span>
-            </button>
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1 mr-2">
+              <button className={cn(
+                "p-2.5 rounded-full transition-all duration-300 hover:bg-black/5",
+                isScrolled ? "text-black" : "text-white hover:bg-white/10"
+              )}>
+                <Search size={19} />
+              </button>
+              <button className={cn(
+                "p-2.5 rounded-full transition-all duration-300 relative group hover:bg-black/5",
+                isScrolled ? "text-black" : "text-white hover:bg-white/10"
+              )}>
+                <ShoppingCart size={19} />
+                <span className="absolute top-1.5 right-1.5 h-4 w-4 bg-[#256DB5] text-white text-[9px] font-bold flex items-center justify-center rounded-full ring-2 ring-background group-hover:scale-110 transition-transform">0</span>
+              </button>
+            </div>
             <Button 
                 variant={isScrolled ? "default" : "outline"} 
                 size="sm" 
                 className={cn(
-                  "hidden sm:inline-flex rounded-full px-6",
-                  !isScrolled && "bg-white/10 backdrop-blur-md text-white border-white/20 hover:bg-white/20 hover:text-white"
+                  "hidden sm:inline-flex rounded-full px-7 h-11 text-[13px] uppercase tracking-widest font-bold transition-all duration-500 shadow-lg shadow-transparent",
+                  isScrolled 
+                    ? "bg-[#256DB5] hover:bg-[#1e5894] border-none shadow-[#256DB5]/20" 
+                    : "bg-white/10 backdrop-blur-md text-white border-white/20 hover:bg-white hover:text-black hover:border-white"
                 )}
             >
-              Beställ analys
+              Analys
             </Button>
           </div>
         </div>
@@ -364,4 +378,5 @@ export default function Home() {
     </div>
   )
 }
+
 
